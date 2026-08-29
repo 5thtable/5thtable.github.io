@@ -107,6 +107,11 @@
   .hint { margin: 6px 0 0; color: var(--ink-muted); font-size: 13px; }
   .fallback { margin-top: 22px; color: var(--ink-muted); font-size: 14px; }
   .fallback a { color: var(--link-foot); border-bottom: 1px solid var(--link-foot); }
+  .form-error { color: #ffcf7a; font-size: 14px; font-weight: 700; margin: 0 0 14px; }
+  .code-input { max-width: 220px; letter-spacing: .35em; font-size: 22px; font-weight: 800; text-align: center; }
+  .resend { background: none; border: 0; cursor: pointer; padding: 0; font-family: inherit; font-size: 13px; font-weight: 700; color: var(--link-foot); border-bottom: 1px solid var(--link-foot); }
+  .resend:disabled { color: var(--ink-muted); border-color: var(--ink-muted); cursor: default; }
+  .done-date { display: inline-block; background: var(--purple-strip); border-radius: 4px; padding: 9px 12px 7px; font-weight: 800; font-size: 15px; }
 
   [hidden] { display: none !important; }
 
@@ -157,52 +162,73 @@
         </div>
         <p>The fastest way is inside the game &mdash; it takes effect immediately:</p>
         <p><span class="path">Profile &rarr; Edit profile &rarr; Delete account</span></p>
-        <p>If you can no longer open the game on your device, you can send us a deletion request by email instead. If the game still opens, copy your Player ID first &mdash; it is shown in <span class="path">Profile &rarr; Edit profile</span> below the Delete account button (tap the ID to copy it) and lets us find your account exactly.</p>
+        <p>If you can no longer open the game on your device, you can request deletion right here. You will need your Player ID and an email address we can send a verification code to.</p>
         <div class="actions">
           <a class="btn btn-ghost" href="/">Back to site</a>
-          <button class="btn btn-primary" type="button" id="to-confirm">Request by email</button>
-        </div>
-      </section>
-
-      <section class="card" id="step-confirm" hidden>
-        <div class="strip"><h2>Confirm your request</h2></div>
-        <p>We will reply to your email to verify the request before anything is deleted &mdash; game accounts are not linked to an email address, so this check protects your account from deletion requests made by someone else.</p>
-        <p>Once verified, deletion is permanent.</p>
-        <div class="actions">
-          <button class="btn btn-ghost" type="button" id="back-info">Maybe later</button>
-          <button class="btn btn-primary" type="button" id="to-form">Confirm</button>
+          <button class="btn btn-primary" type="button" id="to-form">Request deletion</button>
         </div>
       </section>
 
       <section class="card" id="step-form" hidden>
         <div class="strip"><h2>Deletion request</h2></div>
-        <form id="delete-form">
-          <div class="field">
-            <label for="player-name">In-game player name</label>
-            <input id="player-name" name="player-name" type="text" required maxlength="60" autocomplete="off">
-            <p class="hint">Shown on your profile screen in the game.</p>
-          </div>
+        <form id="request-form">
           <div class="field">
             <label for="player-id">Player ID</label>
-            <input id="player-id" name="player-id" type="text" maxlength="60" autocomplete="off" spellcheck="false">
-            <p class="hint">In the game: Profile &rarr; Edit profile &mdash; the Player ID is shown below the Delete account button; tap it once to copy, then paste it here. Player names are not unique, so this ID is the surest way to find your account. Leave it empty if you can no longer open the game.</p>
+            <input id="player-id" name="player-id" type="text" required maxlength="40" autocomplete="off" spellcheck="false" placeholder="00000000-0000-0000-0000-000000000000">
+            <p class="hint">In the game: <span class="path">Profile &rarr; Edit profile</span> &mdash; the Player ID is shown below the Delete account button; tap it once to copy. If you saved it earlier (a support email, a screenshot), paste it here.</p>
           </div>
           <div class="field">
             <label for="contact-email">Your email</label>
             <input id="contact-email" name="contact-email" type="email" required maxlength="120" autocomplete="email">
-            <p class="hint">We reply here to verify the request.</p>
+            <p class="hint">We send a 6-digit verification code here. This address is only used for this request.</p>
           </div>
-          <div class="field">
-            <label for="details">Anything that helps us find the account (optional)</label>
-            <textarea id="details" name="details" maxlength="600"></textarea>
-            <p class="hint">For example: device model, approximate install date, or a purchase receipt number.</p>
-          </div>
+          <p class="form-error" id="request-error" hidden></p>
           <div class="actions">
-            <button class="btn btn-ghost" type="button" id="back-confirm">Back</button>
-            <button class="btn btn-primary" type="submit">Send request</button>
+            <button class="btn btn-ghost" type="button" id="back-info">Back</button>
+            <button class="btn btn-primary" type="submit" id="request-submit">Send code</button>
           </div>
         </form>
-        <p class="fallback">The button opens your email app. If it does not, email <a href="mailto:privacy@5thtable.com">privacy@5thtable.com</a> directly with your player name, your Player ID if you have it, and the request.</p>
+        <p class="fallback">No Player ID and the game no longer opens? Email <a href="mailto:privacy@5thtable.com">privacy@5thtable.com</a> with your display name and anything that helps us find the account, and we will handle it manually.</p>
+      </section>
+
+      <section class="card" id="step-code" hidden>
+        <div class="strip"><h2>Enter the code</h2></div>
+        <p id="code-sent-line">We emailed a 6-digit code to your address. It expires in 15 minutes.</p>
+        <form id="code-form">
+          <div class="field">
+            <label for="code">Verification code</label>
+            <input id="code" name="code" class="code-input" type="text" required inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" spellcheck="false">
+          </div>
+          <div class="warn">
+            <p>Entering the code confirms the request. The account is then deleted automatically after a 7-day cancellation window &mdash; opening the game on the account during that window lets you cancel, and you can also cancel on this page right after confirming.</p>
+          </div>
+          <p class="form-error" id="code-error" hidden></p>
+          <div class="actions">
+            <button class="btn btn-ghost" type="button" id="back-form">Back</button>
+            <button class="btn btn-primary" type="submit" id="code-submit">Confirm deletion</button>
+          </div>
+          <p class="hint" style="margin-top:14px;">No email after a couple of minutes? Check spam, then <button class="resend" type="button" id="resend">send a new code</button>.</p>
+        </form>
+      </section>
+
+      <section class="card" id="step-done" hidden>
+        <div class="strip"><h2>Deletion scheduled</h2></div>
+        <p>The request is confirmed. The account and all its data will be permanently deleted automatically after:</p>
+        <p><span class="done-date" id="done-date"></span></p>
+        <p>Until then, opening the game on the account lets you cancel from the dialog it shows. You will get a confirmation email once deletion completes.</p>
+        <p class="form-error" id="cancel-error" hidden></p>
+        <div class="actions">
+          <a class="btn btn-primary" href="/">Done</a>
+          <button class="btn btn-ghost" type="button" id="cancel-request">Cancel this deletion</button>
+        </div>
+      </section>
+
+      <section class="card" id="step-cancelled" hidden>
+        <div class="strip"><h2>Deletion cancelled</h2></div>
+        <p>The deletion request has been cancelled. Nothing was deleted, and the account stays exactly as it was.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="/">Back to site</a>
+        </div>
       </section>
     </div>
   </main>
@@ -222,37 +248,149 @@
   </footer>
 
 <script>
-  var stepInfo = document.getElementById("step-info");
-  var stepConfirm = document.getElementById("step-confirm");
-  var stepForm = document.getElementById("step-form");
+  var API_BASE = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+    ? "http://localhost:8090"
+    : "https://api.5thtable.com";
 
-  function show(step) {
-    stepInfo.hidden = step !== stepInfo;
-    stepConfirm.hidden = step !== stepConfirm;
-    stepForm.hidden = step !== stepForm;
+  var MESSAGES = {
+    player_id_invalid: "That does not look like a Player ID. Copy it from Profile → Edit profile in the game.",
+    player_unknown: "No account matches that Player ID. Check it and try again.",
+    email_invalid: "That email address does not look right.",
+    deletion_already_scheduled: "Deletion is already scheduled for this account. Open the game to cancel it, or wait for it to complete.",
+    code_resend_limited: "A code was sent recently. Wait a minute before requesting a new one.",
+    rate_limited: "Too many attempts from this connection. Try again in a few minutes.",
+    code_invalid: "Wrong code. Check the email and try again.",
+    code_expired: "That code has expired. Send a new one.",
+    code_attempts_exceeded: "Too many wrong attempts. Send a new code.",
+    request_not_pending: "This request was already confirmed.",
+    request_not_active: "This request is no longer active. Start again if needed.",
+    email_send_failed: "We could not send the email. Try again in a few minutes.",
+    unreachable: "The request service is unreachable right now. Email privacy@5thtable.com with your Player ID instead, and we will handle it manually."
+  };
+
+  var steps = ["step-info", "step-form", "step-code", "step-done", "step-cancelled"].map(function (id) {
+    return document.getElementById(id);
+  });
+  var state = { requestId: "", code: "", playerId: "", email: "" };
+
+  function show(id) {
+    steps.forEach(function (step) { step.hidden = step.id !== id; });
     window.scrollTo(0, 0);
   }
 
-  document.getElementById("to-confirm").addEventListener("click", function () { show(stepConfirm); });
-  document.getElementById("back-info").addEventListener("click", function () { show(stepInfo); });
-  document.getElementById("to-form").addEventListener("click", function () { show(stepForm); });
-  document.getElementById("back-confirm").addEventListener("click", function () { show(stepConfirm); });
+  function setError(id, key) {
+    var element = document.getElementById(id);
+    if (!key) {
+      element.hidden = true;
+      return;
+    }
+    element.textContent = MESSAGES[key] || "Something went wrong. Try again, or email privacy@5thtable.com.";
+    element.hidden = false;
+  }
 
-  document.getElementById("delete-form").addEventListener("submit", function (evt) {
+  function post(path, body) {
+    return fetch(API_BASE + path, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    }).then(function (response) {
+      return response.json().catch(function () { return {}; }).then(function (data) {
+        return { ok: response.ok, data: data };
+      });
+    });
+  }
+
+  function busy(buttonId, isBusy, label) {
+    var button = document.getElementById(buttonId);
+    button.disabled = isBusy;
+    button.textContent = isBusy ? "Please wait…" : label;
+  }
+
+  document.getElementById("to-form").addEventListener("click", function () { show("step-form"); });
+  document.getElementById("back-info").addEventListener("click", function () { show("step-info"); });
+  document.getElementById("back-form").addEventListener("click", function () { show("step-form"); });
+
+  function sendCode(onDone) {
+    busy("request-submit", true, "Send code");
+    post("/public/deletion/request", { playerId: state.playerId, email: state.email })
+      .then(function (result) {
+        busy("request-submit", false, "Send code");
+        if (!result.ok) {
+          onDone(result.data.error || "request_failed");
+          return;
+        }
+        state.requestId = result.data.requestId;
+        onDone(null);
+      })
+      .catch(function () {
+        busy("request-submit", false, "Send code");
+        onDone("unreachable");
+      });
+  }
+
+  document.getElementById("request-form").addEventListener("submit", function (evt) {
     evt.preventDefault();
-    var name = document.getElementById("player-name").value.trim();
-    var playerId = document.getElementById("player-id").value.replace(/\s+/g, "");
-    var email = document.getElementById("contact-email").value.trim();
-    var details = document.getElementById("details").value.trim();
-    var body = "I request deletion of my Zombie Wars account and all associated data." +
-      "\n\nIn-game player name: " + name +
-      (playerId ? "\nPlayer ID: " + playerId : "") +
-      "\nContact email: " + email +
-      (details ? "\nAdditional details: " + details : "") +
-      "\n\nI understand deletion is permanent and cannot be undone.";
-    window.location.href = "mailto:privacy@5thtable.com" +
-      "?subject=" + encodeURIComponent("Account deletion request — Zombie Wars") +
-      "&body=" + encodeURIComponent(body);
+    setError("request-error", null);
+    state.playerId = document.getElementById("player-id").value.replace(/\s+/g, "").toLowerCase();
+    state.email = document.getElementById("contact-email").value.trim();
+    sendCode(function (errorKey) {
+      if (errorKey) {
+        setError("request-error", errorKey);
+        return;
+      }
+      document.getElementById("code").value = "";
+      setError("code-error", null);
+      show("step-code");
+    });
+  });
+
+  var resendButton = document.getElementById("resend");
+  resendButton.addEventListener("click", function () {
+    resendButton.disabled = true;
+    setTimeout(function () { resendButton.disabled = false; }, 60000);
+    setError("code-error", null);
+    sendCode(function (errorKey) {
+      setError("code-error", errorKey);
+    });
+  });
+
+  document.getElementById("code-form").addEventListener("submit", function (evt) {
+    evt.preventDefault();
+    setError("code-error", null);
+    state.code = document.getElementById("code").value.trim();
+    busy("code-submit", true, "Confirm deletion");
+    post("/public/deletion/confirm", { requestId: state.requestId, code: state.code })
+      .then(function (result) {
+        busy("code-submit", false, "Confirm deletion");
+        if (!result.ok) {
+          setError("code-error", result.data.error || "request_failed");
+          return;
+        }
+        var when = new Date(result.data.executeAfterUnix * 1000);
+        document.getElementById("done-date").textContent = when.toLocaleString(undefined, {
+          year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit"
+        });
+        show("step-done");
+      })
+      .catch(function () {
+        busy("code-submit", false, "Confirm deletion");
+        setError("code-error", "unreachable");
+      });
+  });
+
+  document.getElementById("cancel-request").addEventListener("click", function () {
+    setError("cancel-error", null);
+    post("/public/deletion/cancel", { requestId: state.requestId, code: state.code })
+      .then(function (result) {
+        if (!result.ok) {
+          setError("cancel-error", result.data.error || "request_failed");
+          return;
+        }
+        show("step-cancelled");
+      })
+      .catch(function () {
+        setError("cancel-error", "unreachable");
+      });
   });
 </script>
 
