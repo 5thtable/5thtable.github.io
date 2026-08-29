@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — 5TH TABLE LLC</title>
+<meta name="description" content="Privacy Policy for 5TH TABLE LLC — our games, websites and related services.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://5thtable.com/en-US/privacy.html">
+<link rel="alternate" hreflang="en-US" href="https://5thtable.com/en-US/privacy.html">
+<link rel="alternate" hreflang="az-AZ" href="https://5thtable.com/az-AZ/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://5thtable.com/en-US/privacy.html">
+<script>
+(function () {
+  var toAz = window.location.pathname.replace("/en-US/", "/az-AZ/");
+  try {
+    var choice = localStorage.getItem("lang-choice");
+    if (choice === "az") { window.location.replace(toAz); return; }
+    if (!choice) {
+      var langs = navigator.languages || [navigator.language || ""];
+      for (var i = 0; i < langs.length; i++) {
+        if (/^az/i.test(langs[i])) { window.location.replace(toAz); return; }
+        if (/^en/i.test(langs[i])) { break; }
+      }
+    }
+  } catch (e) {}
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #02a4b3;
+    --teal-deep: #03929f;
+    --magenta: #b3029e;
+    --gold: #e0a52f;
+    --purple: #6526a9;
+    --purple-shade: #591e99;
+    --purple-panel: #541796;
+    --purple-strip: #37046d;
+    --purple-footer: #27034d;
+    --ink: #ffffff;
+    --ink-soft: #efe6fb;
+    --ink-muted: #935ecd;
+    --link-foot: #b08be8;
+    --shell: 860px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--purple);
+    color: var(--ink);
+    font-family: "League Spartan", "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    line-height: 1.55;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  main { flex: 1; padding: 44px 0 56px; }
+  .shell { max-width: var(--shell); margin: 0 auto; padding: 0 28px; }
+  .head-shell { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+  a { color: inherit; text-decoration: none; }
+
+  .site-head { background: var(--teal); }
+  .site-head .head-shell { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-top: 14px; padding-bottom: 14px; }
+  .logo { font-weight: 900; font-size: 22px; line-height: .92; letter-spacing: .02em; text-transform: uppercase; }
+  .logo span { display: block; }
+  .site-nav { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    display: inline-block; padding: 8px 12px 6px; border-radius: 4px;
+    background: var(--teal-deep); color: var(--ink);
+    font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  }
+  .chip:hover { filter: brightness(1.12); }
+  .chip.active { background: var(--magenta); }
+
+  h1 {
+    margin: 0 0 8px; font-size: clamp(26px, 4vw, 38px); font-weight: 900;
+    letter-spacing: .03em; text-transform: uppercase;
+  }
+  .sub { margin: 0 0 30px; color: var(--ink-muted); font-size: 15px; font-weight: 700; }
+  .sub a { color: var(--link-foot); border-bottom: 1px solid var(--link-foot); }
+  .sub a:hover { color: var(--ink); border-color: var(--ink); }
+
+  .card { background: var(--purple-panel); border-radius: 6px; padding: 24px 28px 26px; margin: 0 0 18px; }
+  .strip {
+    background: var(--purple-strip); border-radius: 4px;
+    padding: 13px 18px 10px; margin: 0 0 20px;
+  }
+  .strip h2 { margin: 0; font-size: 19px; font-weight: 900; letter-spacing: .05em; text-transform: uppercase; }
+  .card h3 { margin: 20px 0 10px; font-size: 15px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+  .card h3:first-child { margin-top: 0; }
+  .card p, .card li { color: var(--ink-soft); font-size: 15.5px; margin: 0 0 12px; }
+  .card ul, .card ol { margin: 0 0 16px; padding-left: 20px; }
+  .card li { margin-bottom: 8px; }
+  .card a { color: var(--link-foot); border-bottom: 1px solid rgba(176, 139, 232, 0.45); overflow-wrap: anywhere; }
+  .card a:hover { color: var(--ink); border-color: var(--ink); }
+  .card strong { color: var(--ink); }
+  .card p:last-child, .card ul:last-child, .card ol:last-child { margin-bottom: 0; }
+
+  .site-foot { background: var(--purple-footer); padding: 30px 0 26px; }
+  .site-foot .head-shell { display: block; }
+  .foot-nav { display: flex; flex-wrap: wrap; gap: 14px 38px; margin: 0 0 22px; }
+  .foot-nav a { color: var(--link-foot); font-size: 14px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+  .foot-nav a:hover { color: var(--ink); }
+  .legal { color: var(--ink-muted); font-size: 13px; font-weight: 600; }
+  .legal p { margin: 0 0 6px; }
+
+  @media (max-width: 760px) {
+    .shell, .head-shell { padding: 0 20px; }
+    .site-head .head-shell { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .card { padding: 20px 18px 22px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="site-head">
+    <div class="head-shell">
+      <a class="logo" href="/"><span>5th</span><span>Table</span></a>
+      <nav class="site-nav">
+        <a class="chip" href="/">About</a>
+        <a class="chip active" href="/en-US/privacy.html">Privacy Policy</a>
+        <a class="chip" href="/en-US/terms.html">Terms of Use</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="shell">
+      <h1>Privacy Policy</h1>
+      <p class="sub">Updated on: 29 August 2026 &middot; <a href="/az-AZ/privacy.html" onclick="try{localStorage.setItem('lang-choice','az')}catch(e){}">Azərbaycanca</a></p>
+      <section class="card">
+        <p>Thank you for playing our games! This Privacy Policy describes:</p>
+
+        <ul>
+          <li>The ways we collect personal data about you and why we do so</li>
+          <li>How we use your personal data, and</li>
+          <li>The choices you have about your personal data.</li>
+        </ul>
+
+        <p>This Privacy Policy applies to 5TH TABLE's games, websites and related services, which we here collectively call the Service. We may periodically update this Privacy Policy by posting a new version on <a href="https://5thtable.com">https://5thtable.com</a>. If we make any material changes, we will notify you by posting a notice in the Service and on our website at least 14 days prior to the change becoming effective. Your continued use of the Service after the effective date will be subject to the new Privacy Policy.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Contact us</h2></div>
+        <p>If you have questions about data protection, or if you have any requests for resolving issues with your personal data, we encourage you to primarily contact us through the game so we can reply to you more quickly.</p>
+
+        <p>
+        Name of the controller: "5TH TABLE" Limited Liability Company ("5TH TABLE" MMC)<br>
+        Taxpayer identification number (VÖEN): 1507762891<br>
+        Name of the responsible: Elchin Sharifli<br>
+        Contact: <a href="mailto:privacy@5thtable.com">privacy@5thtable.com</a><br>
+        Address: AZ1033, Heydar Aliyev avenue, house 31 M9, apartment 1, Narimanov district, Baku, Republic of Azerbaijan<br>
+        Support: <a href="mailto:support@5thtable.com">support@5thtable.com</a>
+        </p>
+
+        <p>Under the Law of the Republic of Azerbaijan "On Personal Data" we are the owner (<em>mülkiyyətçi</em>) of the personal data described here. Under the EU and UK GDPR we are the data controller. Suppliers who process data on our instructions act as operators, or processors.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>The data we collect</h2></div>
+        <h3>Data you provide us.</h3>
+        <ul>
+          <li>Your display name, which is shown to other players on leaderboards. It stays as "SURVIVOR" until you change it.</li>
+          <li>The avatar you pick from the set built into the game.</li>
+          <li>Your messages to the Service, such as support emails, bug reports and deletion requests, and the address you send them from.</li>
+          <li>Anything you type into a contact form on our website.</li>
+        </ul>
+
+        <p>We do not ask you for your real name, home address, phone number, passport or ID number, bank or card details, health data, biometric data, or your religious or political views, and you should not send them to us.</p>
+
+        <h3>Data we collect automatically.</h3>
+        <ul>
+          <li>An application install identifier — a random identifier the game generates on your device the first time it runs. It is not your device's hardware ID, IMEI, MAC address, serial number or advertising ID.</li>
+          <li>A session token, stored encrypted in the Android Keystore or the iOS Keychain on your device, so you stay signed in without a password.</li>
+          <li>Your game progress: level, experience, in-game gold and gems, the cars, weapons and parts you own and have upgraded, stages completed, your best endless score, and lifetime statistics such as runs played and zombies defeated.</li>
+          <li>Run reports — waves survived, score, duration and mode for each run — which we use for leaderboards, quests, balancing and anti-cheat.</li>
+          <li>Purchase records: which in-game item was bought, when, and the store receipt.</li>
+          <li>Technical and diagnostic data: device model, operating system version, game version, language, the approximate region derived from your IP address, and crash and error logs.</li>
+          <li>Your IP address, which your internet provider assigns when your device connects to our servers. We use it for connection security, fraud prevention and approximate region only. We do not use it to work out a street-level location.</li>
+          <li>Your advertising identifier — GAID on Android, IDFA on iOS. This is provided by your operating system and you can reset or delete it at any time.</li>
+          <li>Ad interaction data: which ads were shown to you, whether you watched a rewarded video to the end, whether you tapped, and your coarse region and device type.</li>
+        </ul>
+
+        <h3>Data we do not collect.</h3>
+
+        <p>We think this is worth stating plainly, because it is a deliberate choice. We do not collect hardware device identifiers such as IMEI, MAC address, Android ID or serial number. We do not collect precise or background GPS location. We do not access your contacts, calendar, call logs, SMS, microphone, camera or photo library, and we never request those permissions. We do not read your list of installed applications. We do not collect biometric or health data. We do not collect payment card or bank details. We do not buy data about you from data brokers. And we never sell your personal data for money.</p>
+
+        <h3>Data we get from our partners.</h3>
+        <ul>
+          <li>From the Apple App Store and Google Play: confirmation that a purchase succeeded, the transaction receipt, refund and chargeback notifications, and aggregate sales statistics that do not identify you. We never receive your card number, bank details or billing address.</li>
+          <li>From our hosting suppliers: security signals such as rate-limit and intrusion alerts.</li>
+          <li>From our advertising partners: aggregated performance reports such as impressions, completion rates and revenue. We do not receive advertising profiles, interest categories, or data about what you do in other apps.</li>
+        </ul>
+
+        <h3>Retaining and deleting personal data.</h3>
+
+        <p>We keep your account, progress, display name and avatar for as long as your account is active. If you do not sign in for 24 months we delete the account or irreversibly de-identify it. When you ask us to delete your account we remove it from our live systems within 30 days, and from our encrypted backups within a further 90 days.</p>
+
+        <p>Some data we must keep longer. Purchase records and receipts are kept for 5 years from the transaction, because Azerbaijani tax and accounting legislation requires it and we cannot shorten that period. Support correspondence is kept for 24 months after your request is closed. Security and abuse logs, including IP addresses, are kept for 12 months. Records of bans are kept for 36 months so that a banned account cannot immediately return. Website server logs are kept for 90 days.</p>
+
+        <p>When a retention period ends we delete the data or de-identify it irreversibly, so that it can no longer be linked back to you.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Why do we collect your data</h2></div>
+        <h3>To run the Service.</h3>
+        <p>We use your install identifier, session token and game progress to create your account, save your game and give it back to you on your next session. We use your display name, avatar and run reports to run leaderboards, quests, in-game mail and events. We use purchase records to deliver what you paid for and to let you restore purchases. Where you are in the EEA or the UK, the legal basis for this is performance of our contract with you, and for purchase records also our legal obligation to keep tax records.</p>
+
+        <h3>To improve the Service.</h3>
+        <p>We use technical and diagnostic data to keep the game running correctly on your device and to fix crashes. The legal basis is our legitimate interest in shipping a product that works.</p>
+
+        <h3>To show advertising.</h3>
+        <p>The game is free because it shows ads. We use your advertising identifier and ad interaction data to show ads, to limit how often you see the same one, to measure whether an ad worked, and — only where you have permitted it — to make ads more relevant. The legal basis for non-personalised advertising is our legitimate interest in funding a free game; for personalised advertising it is your consent, which in the EEA, the UK and Switzerland we collect before any such ad is served.</p>
+
+        <h3>To keep the game fair and safe.</h3>
+        <p>We use IP addresses, run reports, purchase records and your install identifier to detect cheating, fraud, ad fraud, abuse and account theft. The legal basis is our legitimate interest in protecting players and the business.</p>
+
+        <h3>To answer you and to comply with the law.</h3>
+        <p>We use your support correspondence to answer your requests. We use whatever data is strictly relevant to comply with legal obligations, to respond to lawful requests from public authorities, and to establish, exercise or defend legal claims.</p>
+
+        <p>We do not use your data for automated decision-making that produces legal or similarly significant effects on you. We do not ourselves build advertising profiles about you. Where personalised advertising is switched on, our advertising partners may do so using your advertising identifier, and the section on advertising below explains how to stop that.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Your consent under Azerbaijani law</h2></div>
+        <p>The Law of the Republic of Azerbaijan "On Personal Data" requires that your consent to the collection and processing of your personal data be given in written or electronic form, and that it covers certain specific matters. You give that consent by accepting our Terms of Use and starting the game. For the avoidance of doubt, this is what that consent covers:</p>
+
+        <ul>
+          <li><strong>Who you are.</strong> You are identified to us only by the random install identifier described above and by any display name you choose.</li>
+          <li><strong>Who we are.</strong> "5TH TABLE" MMC, VÖEN 1507762891, at the address given under Contact us.</li>
+          <li><strong>What we do it for.</strong> Only the purposes set out in this policy.</li>
+          <li><strong>What data, and what we do with it.</strong> The categories listed above. We collect, record, store, organise, retrieve, use, transmit to the operators named in this policy, restrict, erase and destroy that data.</li>
+          <li><strong>How long the consent lasts and how to withdraw it.</strong> It lasts while your account exists. You may withdraw it at any time by deleting your account in the game, or by writing to <a href="mailto:privacy@5thtable.com">privacy@5thtable.com</a>. Withdrawal does not affect processing already carried out.</li>
+          <li><strong>What happens when storage ends.</strong> The retention periods set out above apply. When they expire the data is deleted or irreversibly de-identified.</li>
+        </ul>
+
+        <p>Withdrawing your consent means we can no longer keep your account. If you withdraw it, your online account and cloud save are deleted and you continue with a local, offline profile only.</p>
+
+        <p>Azerbaijani law also distinguishes open from confidential personal data. Your display name, avatar, and leaderboard score and rank are open — other players see them. Please do not use your real name, email address or phone number as a display name. Everything else we hold about you is treated as confidential: it is not published, not shown to other players, and is disclosed only as described in the next section.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Who can see your data</h2></div>
+        <h3>Other players.</h3>
+        <p>Your display name, avatar and score appear on leaderboards and in event rankings.</p>
+
+        <h3>Our service providers.</h3>
+        <p>These act only on our written instructions and may not use your data for their own purposes. They are, in full:</p>
+
+        <ul>
+          <li><strong>Our cloud hosting provider in the Republic of Azerbaijan</strong> — runs our game servers and database.</li>
+          <li><strong>Apple Inc.</strong> (United States) — distributes the game on iOS and processes payments.</li>
+          <li><strong>Google LLC</strong> (United States) — distributes the game on Android and processes payments.</li>
+          <li><strong>Google Workspace</strong> (United States) — handles our support email.</li>
+        </ul>
+
+        <p>That is the complete list. If we add a provider we will update this policy before they begin processing anything.</p>
+
+        <h3>Our advertising partners.</h3>
+        <p>To deliver ads we share your advertising identifier, ad interaction data, the coarse region derived from your IP address, and your device type with Google AdMob, which is our advertising network, and Unity LevelPlay, which is the mediation platform we use to serve those ads, together with the demand partners they work with. Unlike our service providers, advertising partners may act as independent controllers of that data and may use it under their own privacy policies:</p>
+
+        <ul>
+          <li><strong>Google AdMob</strong> — our advertising network. Its privacy policy is at policies.google.com/privacy and its ad settings at adssettings.google.com.</li>
+          <li><strong>Unity LevelPlay</strong> (ironSource) — the mediation platform. Its privacy policy is at unity.com/legal/game-player-and-app-user-privacy-policy.</li>
+        </ul>
+
+        <p>Those two, and the demand partners they work with, are the only advertising recipients. If we add another network we will update this policy first.</p>
+
+        <p>We do not share your display name, your email address, your purchase history or your game progress with advertising partners.</p>
+
+        <h3>Other companies and public authorities.</h3>
+        <p>We may disclose data where we are legally required to, or where it is genuinely necessary to investigate fraud or a security incident, to enforce our Terms of Use, or to establish, exercise or defend a legal claim. We assess every request we receive, disclose only the minimum necessary, and refuse requests that lack a valid legal basis. If our business or a game is sold, merged or reorganised, data may transfer to the acquirer, and it stays subject to this policy until we notify you otherwise.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Advertising and your choices</h2></div>
+        <p>The game is free because it shows ads. You will see banner ads, and rewarded video ads that you choose to watch in exchange for an in-game reward. Rewarded ads are always optional — nothing in the game is locked behind watching one. In-game purchases are an alternative to ads, not a requirement.</p>
+
+        <p><strong>To turn off personalised ads</strong>, go to Settings, then Privacy, then Personalised Ads. Our partners will then serve contextual ads chosen by the game you are playing rather than by your advertising identifier. You will still see the same number of ads; they will simply be less relevant to you.</p>
+
+        <p><strong>Your device controls override anything set in the game.</strong> On iOS, the first time we would use your advertising identifier for personalised ads, iOS shows the App Tracking Transparency prompt; choose "Ask App Not to Track" and we will not use it, and you can change your mind under Settings, Privacy &amp; Security, Tracking. On Android you can reset or delete your advertising ID under Settings, Google, Ads; deleting it stops personalised ads across every app on the device.</p>
+
+        <p><strong>If you are in the EEA, the UK or Switzerland</strong>, we ask for your consent through a Google-certified consent management platform before we serve any ad that uses your advertising identifier. You may accept or refuse, and you may change your answer at any time under Settings, Privacy, Ad Consent. Refusing does not restrict any part of the game.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>International data transfers</h2></div>
+        <p>Our game servers are located in the Republic of Azerbaijan. Some of our suppliers necessarily operate internationally: the App Store and Google Play run globally, our advertising partners are based in the United States, and our support email is handled by Google Workspace. Your personal data may therefore be processed outside your own country.</p>
+
+        <p><strong>If you are in Azerbaijan</strong>, your account and game data stay on servers inside the country.</p>
+
+        <p><strong>If you are in the EEA, the United Kingdom or Switzerland</strong>, your data is processed on our servers in Azerbaijan, and by suppliers in the United States for advertising and for support email. Azerbaijan is not the subject of a European Commission adequacy decision. Where the law requires a specific safeguard for such a transfer, we rely on an appropriate one — for example the European Commission's Standard Contractual Clauses, the United Kingdom International Data Transfer Addendum, or, where a supplier in the United States is certified under it, the EU–US Data Privacy Framework. In every case your data is encrypted in transit and at rest. You may ask which safeguard applies to a particular transfer, and request a copy of it, by writing to <a href="mailto:privacy@5thtable.com">privacy@5thtable.com</a>.</p>
+
+        <p>Under Azerbaijani law, cross-border transfer is permitted where the destination provides a level of protection equivalent to that guaranteed in Azerbaijan, or where you have consented. We transfer only to jurisdictions that meet that test, and we obtain your consent as described above. We do not transfer personal data to any jurisdiction where the transfer would threaten the national security of the Republic of Azerbaijan.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Your rights and options</h2></div>
+        <h3>Deleting your account.</h3>
+
+        <p>You can delete your account inside the game at any time, in any country, without emailing us and without contacting us first. Go to the Main Menu, then Profile, then Edit Profile, then Delete Account, and confirm. This permanently deletes your online account and the data we hold on our servers, and signs you out. It cannot be undone, and purchased items and in-game currency are lost and cannot be refunded or restored.</p>
+
+        <p>Deletion is done inside the game — that is the fastest and most reliable route, and it needs nothing from us. If you have already uninstalled the game, or the in-game route does not work for you, write to <a href="mailto:privacy@5thtable.com">privacy@5thtable.com</a> from any address, giving your display name and, if you have it, your player ID. We will delete the account and confirm when it is done.</p>
+
+        <h3>Your other rights.</h3>
+
+        <p>Under Azerbaijani law you have the right to know whether we hold personal data about you and who owns and operates it; to be told the legal grounds, the purpose and the duration of the processing; to see the content of the data we hold; to have inaccurate or incomplete data corrected; to have data deleted where it was unlawfully obtained, is no longer needed, or has been processed beyond the stated purpose; to have processing stopped or restricted; to be told the source of the data; to require that your data be protected to the standard the law demands; to be informed about the certification and compliance status of the information system; and to exercise any other right the legislation gives you.</p>
+
+        <p>If you are in the EEA, the UK or Switzerland you also have the rights of access, rectification, erasure, restriction, data portability, objection to processing based on legitimate interests, and withdrawal of consent, as well as the right to lodge a complaint with your supervisory authority.</p>
+
+        <p>If you are a resident of California or another US state with a comprehensive privacy law, you have the rights to know, access, correct, delete and obtain a portable copy of your personal information, and not to be discriminated against for exercising them.</p>
+
+        <h3>Do not sell or share my personal information.</h3>
+
+        <p>We never exchange your data for money. However, sharing your advertising identifier with advertising partners for personalised advertising is treated as a "sale" or a "share" under the CCPA and CPRA and similar state laws. To opt out, turn off personalised ads in the game under Settings, Privacy, Personalised Ads. You can also write to <a href="mailto:privacy@5thtable.com">privacy@5thtable.com</a>. Opting out does not remove ads; it makes them non-personalised. We do not knowingly sell or share the personal information of anyone under 16.</p>
+
+        <h3>How to exercise your rights.</h3>
+
+        <p>Write to <a href="mailto:privacy@5thtable.com">privacy@5thtable.com</a>. We respond within 30 days, and we may extend that once by a further 30 days for a complex request, in which case we will tell you. Exercising your rights is free. We may refuse a request, or charge a reasonable fee, only where it is manifestly unfounded or excessively repetitive, and we will explain why. We may need information that lets us match your request to your account, normally your player ID or display name. We will not ask you for an identity document.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Cookies and similar technologies</h2></div>
+        <p>Our games do not use cookies. Our website uses strictly necessary cookies to make the site work, including remembering your language and your cookie choice, and optional analytics cookies that we set only if you accept them on the banner shown on your first visit. We do not use advertising cookies on our website. You can change your choice at any time from the cookie banner, or block and delete cookies in your browser settings, though the site will not work correctly without the strictly necessary ones.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>How do we protect your data</h2></div>
+        <p>All traffic between the game and our servers is encrypted in transit using TLS. Session tokens are held in the Android Keystore or the iOS Keychain rather than in plain text. Because we use device-based authentication there is no password of yours for an attacker to steal from us. Access to our servers is limited to the named individuals who need it and is logged. And the strongest protection of all is the data we never collect in the first place, which is set out above.</p>
+
+        <p>No system is perfectly secure. If a personal data breach occurs that is likely to result in a risk to your rights, we will notify the competent authority and, where the risk is high, notify affected players directly and without undue delay.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Age limits</h2></div>
+        <p>Our Service is not directed to children, and the game contains stylised combat and violence. You must be at least 13 years old to use it, and at least 16 if you are in the EEA, the United Kingdom or Switzerland. Where local law sets a higher minimum age for consent to online services, that higher age applies.</p>
+
+        <p>We do not knowingly collect personal data from anyone below these ages. Our games are not enrolled in Google Play's Designed for Families programme and are not in the Apple App Store Kids Category. If you are a parent or guardian and you believe a child below the applicable age has given us personal data, write to <a href="mailto:privacy@5thtable.com">privacy@5thtable.com</a> and we will delete the account and its data without delay. We will not ask you to prove the child's identity.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>How to complain</h2></div>
+        <p>Please contact us first at <a href="mailto:privacy@5thtable.com">privacy@5thtable.com</a> — we would rather fix the problem directly. If you are not satisfied, you may complain to a supervisory authority.</p>
+
+        <p>In the Republic of Azerbaijan this is the Electronic Security Service (Elektron Təhlükəsizlik Xidməti) under the Ministry of Digital Development and Transport, which is the authorised body in the field of personal data protection, and the Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan. In the EEA it is the data protection authority of the country where you live or work. In the United Kingdom it is the Information Commissioner's Office, at ico.org.uk.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="head-shell">
+      <nav class="foot-nav">
+        <a href="/en-US/terms.html">Terms of Use</a>
+        <a href="/en-US/privacy.html">Privacy Policy</a>
+        <a href="mailto:support@5thtable.com">Contact</a>
+        <a href="/delete-account">Account Deletion</a>
+      </nav>
+      <div class="legal">
+        <p>&copy; 2026 5th Table. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Account Deletion — 5th Table</title>
+<meta name="description" content="How to delete your Zombie Wars account and all associated data, in the game or by email request.">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #02a4b3;
+    --teal-deep: #03929f;
+    --magenta: #b3029e;
+    --gold: #e0a52f;
+    --purple: #6526a9;
+    --purple-shade: #591e99;
+    --purple-panel: #541796;
+    --purple-strip: #37046d;
+    --purple-footer: #27034d;
+    --ink: #ffffff;
+    --ink-soft: #efe6fb;
+    --ink-muted: #935ecd;
+    --link-foot: #b08be8;
+    --shell: 860px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--purple);
+    color: var(--ink);
+    font-family: "League Spartan", "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  main { flex: 1; }
+  .shell { max-width: var(--shell); margin: 0 auto; padding: 0 28px; }
+  .head-shell { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+  a { color: inherit; text-decoration: none; }
+
+  .site-head { background: var(--teal); }
+  .site-head .head-shell { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-top: 14px; padding-bottom: 14px; }
+  .logo { font-weight: 900; font-size: 22px; line-height: .92; letter-spacing: .02em; text-transform: uppercase; }
+  .logo span { display: block; }
+  .site-nav { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    display: inline-block; padding: 8px 12px 6px; border-radius: 4px;
+    background: var(--teal-deep); color: var(--ink);
+    font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  }
+  .chip:hover { filter: brightness(1.12); }
+
+  main { padding: 48px 0 56px; }
+  h1 {
+    margin: 0 0 8px; font-size: clamp(26px, 4vw, 38px); font-weight: 900;
+    letter-spacing: .03em; text-transform: uppercase;
+  }
+  .sub { margin: 0 0 30px; color: var(--ink-muted); font-size: 15px; font-weight: 700; }
+
+  .card { background: var(--purple-panel); border-radius: 6px; padding: 26px 28px 30px; }
+  .strip {
+    background: var(--purple-strip); border-radius: 4px;
+    padding: 13px 18px 10px; margin: 0 0 20px;
+  }
+  .strip h2 { margin: 0; font-size: 19px; font-weight: 900; letter-spacing: .05em; text-transform: uppercase; }
+  .card p, .card li { color: var(--ink-soft); font-size: 15.5px; margin: 0 0 12px; }
+  .card ul { margin: 0 0 16px; padding-left: 20px; }
+  .card li { margin-bottom: 8px; }
+  .warn {
+    background: var(--purple-strip); border-left: 4px solid var(--gold); border-radius: 4px;
+    padding: 14px 16px 10px; margin: 0 0 18px;
+  }
+  .warn p { margin: 0; color: var(--ink-soft); font-size: 14.5px; font-weight: 700; }
+  .path {
+    display: inline-block; background: var(--purple-strip); border-radius: 4px;
+    padding: 9px 12px 7px; font-weight: 800; letter-spacing: .04em; font-size: 14px;
+  }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .btn {
+    display: inline-block; border: 0; cursor: pointer; border-radius: 5px;
+    padding: 13px 26px 10px; font-family: inherit;
+    font-size: 15px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; color: var(--ink);
+  }
+  .btn-primary { background: var(--magenta); }
+  .btn-primary:hover { filter: brightness(1.15); }
+  .btn-ghost { background: transparent; border: 2px solid var(--ink-muted); color: var(--ink-soft); }
+  .btn-ghost:hover { border-color: var(--ink-soft); }
+
+  label { display: block; margin: 0 0 6px; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+  .field { margin: 0 0 18px; }
+  input, textarea {
+    width: 100%; border: 2px solid var(--purple-strip); border-radius: 5px;
+    background: var(--purple-shade); color: var(--ink);
+    font-family: inherit; font-size: 15.5px; font-weight: 600;
+    padding: 12px 14px 10px;
+  }
+  input:focus, textarea:focus { outline: none; border-color: var(--magenta); }
+  textarea { min-height: 90px; resize: vertical; }
+  .hint { margin: 6px 0 0; color: var(--ink-muted); font-size: 13px; }
+  .fallback { margin-top: 22px; color: var(--ink-muted); font-size: 14px; }
+  .fallback a { color: var(--link-foot); border-bottom: 1px solid var(--link-foot); }
+
+  [hidden] { display: none !important; }
+
+  .site-foot { background: var(--purple-footer); padding: 30px 0 26px; }
+  .site-foot .head-shell { display: block; }
+  .foot-nav { display: flex; flex-wrap: wrap; gap: 14px 38px; margin: 0 0 22px; }
+  .foot-nav a { color: var(--link-foot); font-size: 14px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+  .foot-nav a:hover { color: var(--ink); }
+  .legal { color: var(--ink-muted); font-size: 13px; font-weight: 600; }
+  .legal p { margin: 0 0 6px; }
+
+  @media (max-width: 760px) {
+    .shell, .head-shell { padding: 0 20px; }
+    .site-head .head-shell { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .card { padding: 20px 18px 24px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="site-head">
+    <div class="head-shell">
+      <a class="logo" href="/"><span>5th</span><span>Table</span></a>
+      <nav class="site-nav">
+        <a class="chip" href="/">About</a>
+        <a class="chip" href="/en-US/privacy.html">Privacy Policy</a>
+        <a class="chip" href="/en-US/terms.html">Terms of Use</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="shell">
+      <h1>Account &amp; Data Deletion</h1>
+      <p class="sub">Zombie Wars &middot; 5th Table</p>
+
+      <section class="card" id="step-info">
+        <div class="strip"><h2>Before you delete</h2></div>
+        <p>Deleting your account permanently removes everything tied to it:</p>
+        <ul>
+          <li>Your player profile and display name</li>
+          <li>All progress &mdash; unlocked maps, vehicles, weapons and upgrades</li>
+          <li>All in-game currency and unclaimed mail rewards</li>
+          <li>Your leaderboard entries</li>
+        </ul>
+        <div class="warn">
+          <p>Deletion cannot be undone. Anything you purchased is removed with the account and cannot be restored afterwards, so use any remaining currency first.</p>
+        </div>
+        <p>The fastest way is inside the game &mdash; it takes effect immediately:</p>
+        <p><span class="path">Profile &rarr; Edit profile &rarr; Delete account</span></p>
+        <p>If you can no longer open the game on your device, you can send us a deletion request by email instead. If the game still opens, copy your Player ID first &mdash; it is shown in <span class="path">Profile &rarr; Edit profile</span> below the Delete account button (tap the ID to copy it) and lets us find your account exactly.</p>
+        <div class="actions">
+          <a class="btn btn-ghost" href="/">Back to site</a>
+          <button class="btn btn-primary" type="button" id="to-confirm">Request by email</button>
+        </div>
+      </section>
+
+      <section class="card" id="step-confirm" hidden>
+        <div class="strip"><h2>Confirm your request</h2></div>
+        <p>We will reply to your email to verify the request before anything is deleted &mdash; game accounts are not linked to an email address, so this check protects your account from deletion requests made by someone else.</p>
+        <p>Once verified, deletion is permanent.</p>
+        <div class="actions">
+          <button class="btn btn-ghost" type="button" id="back-info">Maybe later</button>
+          <button class="btn btn-primary" type="button" id="to-form">Confirm</button>
+        </div>
+      </section>
+
+      <section class="card" id="step-form" hidden>
+        <div class="strip"><h2>Deletion request</h2></div>
+        <form id="delete-form">
+          <div class="field">
+            <label for="player-name">In-game player name</label>
+            <input id="player-name" name="player-name" type="text" required maxlength="60" autocomplete="off">
+            <p class="hint">Shown on your profile screen in the game.</p>
+          </div>
+          <div class="field">
+            <label for="player-id">Player ID</label>
+            <input id="player-id" name="player-id" type="text" maxlength="60" autocomplete="off" spellcheck="false">
+            <p class="hint">In the game: Profile &rarr; Edit profile &mdash; the Player ID is shown below the Delete account button; tap it once to copy, then paste it here. Player names are not unique, so this ID is the surest way to find your account. Leave it empty if you can no longer open the game.</p>
+          </div>
+          <div class="field">
+            <label for="contact-email">Your email</label>
+            <input id="contact-email" name="contact-email" type="email" required maxlength="120" autocomplete="email">
+            <p class="hint">We reply here to verify the request.</p>
+          </div>
+          <div class="field">
+            <label for="details">Anything that helps us find the account (optional)</label>
+            <textarea id="details" name="details" maxlength="600"></textarea>
+            <p class="hint">For example: device model, approximate install date, or a purchase receipt number.</p>
+          </div>
+          <div class="actions">
+            <button class="btn btn-ghost" type="button" id="back-confirm">Back</button>
+            <button class="btn btn-primary" type="submit">Send request</button>
+          </div>
+        </form>
+        <p class="fallback">The button opens your email app. If it does not, email <a href="mailto:privacy@5thtable.com">privacy@5thtable.com</a> directly with your player name, your Player ID if you have it, and the request.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="head-shell">
+      <nav class="foot-nav">
+        <a href="/en-US/terms.html">Terms of Use</a>
+        <a href="/en-US/privacy.html">Privacy Policy</a>
+        <a href="mailto:support@5thtable.com">Contact</a>
+        <a href="/delete-account">Account Deletion</a>
+      </nav>
+      <div class="legal">
+        <p>&copy; 2026 5th Table. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  var stepInfo = document.getElementById("step-info");
+  var stepConfirm = document.getElementById("step-confirm");
+  var stepForm = document.getElementById("step-form");
+
+  function show(step) {
+    stepInfo.hidden = step !== stepInfo;
+    stepConfirm.hidden = step !== stepConfirm;
+    stepForm.hidden = step !== stepForm;
+    window.scrollTo(0, 0);
+  }
+
+  document.getElementById("to-confirm").addEventListener("click", function () { show(stepConfirm); });
+  document.getElementById("back-info").addEventListener("click", function () { show(stepInfo); });
+  document.getElementById("to-form").addEventListener("click", function () { show(stepForm); });
+  document.getElementById("back-confirm").addEventListener("click", function () { show(stepConfirm); });
+
+  document.getElementById("delete-form").addEventListener("submit", function (evt) {
+    evt.preventDefault();
+    var name = document.getElementById("player-name").value.trim();
+    var playerId = document.getElementById("player-id").value.replace(/\s+/g, "");
+    var email = document.getElementById("contact-email").value.trim();
+    var details = document.getElementById("details").value.trim();
+    var body = "I request deletion of my Zombie Wars account and all associated data." +
+      "\n\nIn-game player name: " + name +
+      (playerId ? "\nPlayer ID: " + playerId : "") +
+      "\nContact email: " + email +
+      (details ? "\nAdditional details: " + details : "") +
+      "\n\nI understand deletion is permanent and cannot be undone.";
+    window.location.href = "mailto:privacy@5thtable.com" +
+      "?subject=" + encodeURIComponent("Account deletion request — Zombie Wars") +
+      "&body=" + encodeURIComponent(body);
+  });
+</script>
+
+</body>
+</html>

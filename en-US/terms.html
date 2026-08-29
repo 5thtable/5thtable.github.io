@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Use — 5TH TABLE LLC</title>
+<meta name="description" content="Terms of Use for 5TH TABLE LLC — our games, websites and related services.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://5thtable.com/en-US/terms.html">
+<link rel="alternate" hreflang="en-US" href="https://5thtable.com/en-US/terms.html">
+<link rel="alternate" hreflang="az-AZ" href="https://5thtable.com/az-AZ/terms.html">
+<link rel="alternate" hreflang="x-default" href="https://5thtable.com/en-US/terms.html">
+<script>
+(function () {
+  var toAz = window.location.pathname.replace("/en-US/", "/az-AZ/");
+  try {
+    var choice = localStorage.getItem("lang-choice");
+    if (choice === "az") { window.location.replace(toAz); return; }
+    if (!choice) {
+      var langs = navigator.languages || [navigator.language || ""];
+      for (var i = 0; i < langs.length; i++) {
+        if (/^az/i.test(langs[i])) { window.location.replace(toAz); return; }
+        if (/^en/i.test(langs[i])) { break; }
+      }
+    }
+  } catch (e) {}
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #02a4b3;
+    --teal-deep: #03929f;
+    --magenta: #b3029e;
+    --gold: #e0a52f;
+    --purple: #6526a9;
+    --purple-shade: #591e99;
+    --purple-panel: #541796;
+    --purple-strip: #37046d;
+    --purple-footer: #27034d;
+    --ink: #ffffff;
+    --ink-soft: #efe6fb;
+    --ink-muted: #935ecd;
+    --link-foot: #b08be8;
+    --shell: 860px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--purple);
+    color: var(--ink);
+    font-family: "League Spartan", "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    line-height: 1.55;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  main { flex: 1; padding: 44px 0 56px; }
+  .shell { max-width: var(--shell); margin: 0 auto; padding: 0 28px; }
+  .head-shell { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+  a { color: inherit; text-decoration: none; }
+
+  .site-head { background: var(--teal); }
+  .site-head .head-shell { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-top: 14px; padding-bottom: 14px; }
+  .logo { font-weight: 900; font-size: 22px; line-height: .92; letter-spacing: .02em; text-transform: uppercase; }
+  .logo span { display: block; }
+  .site-nav { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    display: inline-block; padding: 8px 12px 6px; border-radius: 4px;
+    background: var(--teal-deep); color: var(--ink);
+    font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  }
+  .chip:hover { filter: brightness(1.12); }
+  .chip.active { background: var(--magenta); }
+
+  h1 {
+    margin: 0 0 8px; font-size: clamp(26px, 4vw, 38px); font-weight: 900;
+    letter-spacing: .03em; text-transform: uppercase;
+  }
+  .sub { margin: 0 0 30px; color: var(--ink-muted); font-size: 15px; font-weight: 700; }
+  .sub a { color: var(--link-foot); border-bottom: 1px solid var(--link-foot); }
+  .sub a:hover { color: var(--ink); border-color: var(--ink); }
+
+  .card { background: var(--purple-panel); border-radius: 6px; padding: 24px 28px 26px; margin: 0 0 18px; }
+  .strip {
+    background: var(--purple-strip); border-radius: 4px;
+    padding: 13px 18px 10px; margin: 0 0 20px;
+  }
+  .strip h2 { margin: 0; font-size: 19px; font-weight: 900; letter-spacing: .05em; text-transform: uppercase; }
+  .card h3 { margin: 20px 0 10px; font-size: 15px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+  .card h3:first-child { margin-top: 0; }
+  .card p, .card li { color: var(--ink-soft); font-size: 15.5px; margin: 0 0 12px; }
+  .card ul, .card ol { margin: 0 0 16px; padding-left: 20px; }
+  .card li { margin-bottom: 8px; }
+  .card a { color: var(--link-foot); border-bottom: 1px solid rgba(176, 139, 232, 0.45); overflow-wrap: anywhere; }
+  .card a:hover { color: var(--ink); border-color: var(--ink); }
+  .card strong { color: var(--ink); }
+  .card p:last-child, .card ul:last-child, .card ol:last-child { margin-bottom: 0; }
+
+  .site-foot { background: var(--purple-footer); padding: 30px 0 26px; }
+  .site-foot .head-shell { display: block; }
+  .foot-nav { display: flex; flex-wrap: wrap; gap: 14px 38px; margin: 0 0 22px; }
+  .foot-nav a { color: var(--link-foot); font-size: 14px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+  .foot-nav a:hover { color: var(--ink); }
+  .legal { color: var(--ink-muted); font-size: 13px; font-weight: 600; }
+  .legal p { margin: 0 0 6px; }
+
+  @media (max-width: 760px) {
+    .shell, .head-shell { padding: 0 20px; }
+    .site-head .head-shell { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .card { padding: 20px 18px 22px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="site-head">
+    <div class="head-shell">
+      <a class="logo" href="/"><span>5th</span><span>Table</span></a>
+      <nav class="site-nav">
+        <a class="chip" href="/">About</a>
+        <a class="chip" href="/en-US/privacy.html">Privacy Policy</a>
+        <a class="chip active" href="/en-US/terms.html">Terms of Use</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="shell">
+      <h1>Terms of Use</h1>
+      <p class="sub">Updated on: 29 August 2026 &middot; <a href="/az-AZ/terms.html" onclick="try{localStorage.setItem('lang-choice','az')}catch(e){}">Azərbaycanca</a></p>
+      <section class="card">
+        <p>Thank you for playing our games! These Terms of Use are a binding agreement between you and "5TH TABLE" Limited Liability Company, a company registered in the Republic of Azerbaijan under taxpayer identification number 1507762891. In these terms we call ourselves "we" or "us".</p>
+
+        <p>These terms apply to 5TH TABLE's games, websites and related services, which we here collectively call the Service — the same scope as our <a href="privacy.html">Privacy Policy</a>. By downloading, installing, opening or using the Service you accept these terms and that Privacy Policy. If you do not accept them, do not use the Service, and please delete the application from your device.</p>
+
+        <p>Two sections deserve your attention before you agree: the section on limitation of liability, which limits what you can recover from us, and the section on governing law, which decides where any dispute is heard.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Contact us</h2></div>
+        <p>
+        "5TH TABLE" Məhdud Məsuliyyətli Cəmiyyəti<br>
+        Taxpayer identification number (VÖEN): 1507762891, registered 25 August 2026<br>
+        Legal representative: Elchin Sharifli<br>
+        Address: AZ1033, Heydar Aliyev avenue, house 31 M9, apartment 1, Narimanov district, Baku, Republic of Azerbaijan<br>
+        Support, complaints and appeals: <a href="mailto:support@5thtable.com">support@5thtable.com</a><br>
+        Privacy and data requests: <a href="mailto:privacy@5thtable.com">privacy@5thtable.com</a>
+        </p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Who may use the Service</h2></div>
+        <p>You may use the Service only if you are at least 13 years old, or at least 16 if you are in the EEA, the United Kingdom or Switzerland, or older where your local law requires it. You must have the legal capacity to enter into a binding contract, or your parent's or guardian's permission. You must not be barred from receiving our Service under the law that applies to you, including trade sanctions and export controls, and we must not have previously terminated your account for breaching these terms.</p>
+
+        <p>If you are a parent or guardian and your child uses the Service, you are responsible for their use of it and for any purchases they make on your device. You can require authentication for purchases in your device settings — Screen Time on iOS, or the purchase authentication setting on Google Play.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Your account</h2></div>
+        <p>The game creates your account automatically, using a random identifier generated on your device. You do not create a username and password with us, and we do not ask for your email address.</p>
+
+        <p>Because of that, your account is tied to the device and the installation. If you delete the game, reset your device, or move to a different device, your progress may be permanently lost, and we are not obliged to restore it. You are responsible for your device and for anything done through your account on it.</p>
+
+        <p>One person, one account. Please do not create multiple accounts to gain an advantage, to evade a ban, or to abuse rewards, events or leaderboards. Accounts have no ownership value and are not property, so you may not sell, buy, rent, gift or transfer one. If you believe your account has been used without your permission, write to <a href="mailto:support@5thtable.com">support@5thtable.com</a>.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Your licence to use the game</h2></div>
+        <p>We grant you a personal, limited, non-exclusive, non-transferable, non-sublicensable and revocable licence to install and use one copy of the game on a device you own or control, for your own personal and non-commercial entertainment, in accordance with these terms and the rules of the store you installed from. This is a licence to use the game, not a sale of it. We and our licensors keep every right we have not expressly granted you.</p>
+
+        <p>You must not copy, modify, translate or adapt the Service or create derivative works from it, except where the law says that cannot be prohibited. You must not reverse engineer, decompile or disassemble the software, except to the limited extent applicable law expressly permits despite this restriction. You must not remove or alter any copyright, trademark or other proprietary notice. You must not rent, lease, lend, sell, sublicense, distribute or commercially host the Service, including through a cloud-gaming or emulation service. You must not use the Service to build a competing product or to train a machine-learning model on our content, and you must not extract or harvest our content, assets or data in bulk.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>The game is ad-supported</h2></div>
+        <p>The game is free to download and play, and is funded by advertising and by optional in-game purchases.</p>
+
+        <p>You will see banner ads and rewarded video ads. Rewarded ads are always optional — nothing in the game is locked behind watching one, and declining costs you nothing but the reward itself. You can switch off personalised ads at any time under Settings, Privacy, Personalised Ads, and through your device's own controls; our <a href="privacy.html">Privacy Policy</a> explains this in full.</p>
+
+        <p>Ads are supplied by third-party networks. We do not control and are not responsible for the content of third-party ads, or for anything you buy or download from an advertiser. If you see an inappropriate ad, report it to <a href="mailto:support@5thtable.com">support@5thtable.com</a> and we will pass it to the network.</p>
+
+        <p>Please do not attempt to falsify ad impressions, clicks or rewards. Ad fraud — emulators, click farms, automation, or tampering with reward callbacks — breaches the conduct rules below and will result in a ban. And note that buying something from our in-game store does not remove ads unless the item explicitly says that it does.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Virtual items</h2></div>
+        <p>Please read this section carefully, because it is the one players most often misunderstand.</p>
+
+        <p>Virtual items are a licence, not property. When you buy gold, gems, a car, a weapon or any other virtual item, you are buying a limited, personal, revocable and non-transferable licence to use that item inside the game. You do not own it.</p>
+
+        <p>It follows that virtual items have no monetary value. They are not currency, credit, a deposit, a security, a financial instrument or property, and they cannot be exchanged for real money, goods or anything else of value, from us or from anyone else. They exist only inside the game and only for as long as we operate it.</p>
+
+        <p>We may change, rebalance, add, remove, re-price or expire virtual items at any time as part of normal game balancing. A balance change is not a defect and does not entitle you to a refund. You may not trade, sell or transfer virtual items to another player or to a third party; real-money trading of accounts or virtual items is prohibited and will result in a ban. If you close your account, or if we terminate it because you breached these terms, all virtual items are lost with no compensation. And if we discontinue the game, virtual items cease to exist.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Purchases and refunds</h2></div>
+        <p>All purchases are processed by Apple or Google under their own terms, using the payment method on your store account. We never see or receive your card number, bank details or billing address. The price you see includes VAT or other taxes wherever the store is required to add them.</p>
+
+        <p>Because payment is handled by the store, refunds are governed by the store's policy and must be requested from the store rather than from us. On Apple, use reportaproblem.apple.com. On Google, use Google Play support. We can generally neither grant nor block a store refund, but if you believe you have been charged in error, write to <a href="mailto:support@5thtable.com">support@5thtable.com</a> and we will help where we can.</p>
+
+        <p>If you are a consumer in the EEA or the United Kingdom you normally have 14 days to withdraw from a distance contract. Virtual items are digital content delivered immediately, so when you confirm a purchase you expressly request immediate performance and acknowledge that you thereby lose your right of withdrawal once delivery has begun. This does not affect your rights if the digital content is faulty.</p>
+
+        <p>Nothing in these terms limits the rights you have under the Law of the Republic of Azerbaijan "On Protection of Consumer Rights" or under any other mandatory consumer legislation that applies to you.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Rules of conduct</h2></div>
+        <p>Please do not do any of the following.</p>
+
+        <ul>
+          <li>Cheat — no hacking, memory editing, speed hacks, modified clients, automation, bots, macros or exploits.</li>
+          <li>Abuse bugs. If you find an exploit such as a duplication bug, a currency glitch or an invulnerability, stop using it and report it to <a href="mailto:support@5thtable.com">support@5thtable.com</a>. Continuing to use it is a breach of these terms.</li>
+          <li>Manipulate leaderboards, or falsify scores, runs, quests or event results.</li>
+          <li>Attack the Service — no denial-of-service, no unauthorised access attempts, no scanning or penetration testing without our written permission, and no interference with our servers or with other players.</li>
+          <li>Reverse engineer or tamper with our network protocols, or intercept, modify or fabricate traffic between the game and our servers.</li>
+          <li>Trade for real money — no selling, buying or brokering of accounts, virtual items or services.</li>
+          <li>Impersonate us, our staff, or another person.</li>
+          <li>Use an unlawful, offensive or infringing display name.</li>
+          <li>Circumvent a ban or any technical restriction we apply.</li>
+          <li>Break the law through your use of the Service.</li>
+        </ul>
+
+        <p>If you find a security vulnerability, please report it responsibly to <a href="mailto:privacy@5thtable.com">privacy@5thtable.com</a> before disclosing it anywhere else. We will not pursue anyone who reports a genuine vulnerability in good faith and who does not exploit it, access other players' data, or degrade the Service.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Your display name and avatar</h2></div>
+        <p>You choose a display name and an avatar, and both are shown publicly on leaderboards.</p>
+
+        <p>Your display name must not contain your real name, your contact details or personal information about you or anyone else. It must not impersonate another person or us, and it must not be obscene, hateful, harassing, discriminatory, sexual, or violent toward a real person or group. It must not promote illegal activity, infringe anyone's trademark or other rights, or advertise anything.</p>
+
+        <p>By choosing a display name you grant us a non-exclusive, worldwide and royalty-free licence to display it within the Service for as long as your account exists — no more than we need in order to run the leaderboard. We may change or reset a display name that breaches these rules, with or without notice, and repeated breaches may result in termination.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Suspension and termination</h2></div>
+        <p>You can delete your account at any time, from the Main Menu under Profile, Edit Profile, Delete Account. Deletion is permanent and irreversible, and all virtual items are lost without refund.</p>
+
+        <p>We may suspend or terminate your account, or restrict access to features, if we reasonably believe you have breached these terms — in particular the conduct rules — or where we must do so to comply with the law or to protect other players or the Service. Except where a serious breach, a legal requirement, or a risk to others makes it impossible, we will tell you the reason and give you a chance to respond.</p>
+
+        <p>If we terminate your account because you breached these terms, virtual items are forfeited without refund. If we terminate it for a reason that is not your fault, you may ask us at <a href="mailto:support@5thtable.com">support@5thtable.com</a> about a refund of unconsumed virtual items bought in the previous 30 days, and we will deal with that reasonably. To appeal any decision, write to the same address within 30 days and we will review it and reply.</p>
+
+        <p>The sections on virtual items, intellectual property, disclaimers, limitation of liability, indemnity and governing law continue to apply after your account ends.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Intellectual property and fan content</h2></div>
+        <p>All content in the Service is owned by us or by our licensors and is protected by copyright, trademark and other laws of the Republic of Azerbaijan and internationally. These terms transfer no ownership to you.</p>
+
+        <p>We are glad for you to make and share screenshots, videos, streams and fan art of the game, including monetised videos on platforms such as YouTube and Twitch. Please do not claim that you made or own the game, use our name or logo in a way that suggests we endorse or sponsor you, sell merchandise using our content, distribute our assets, builds or source files, or present the content in a way that is unlawful or that harms our reputation. We may withdraw this permission from anyone who abuses it.</p>
+
+        <p>If you believe we have infringed your rights, write to <a href="mailto:support@5thtable.com">support@5thtable.com</a> identifying the work, the material you are complaining about, your contact details and the basis of your claim, and we will investigate promptly.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Apple App Store</h2></div>
+        <p>Where you obtained the game from the Apple App Store, the following also applies and, to the extent of any conflict with the rest of these terms, prevails.</p>
+
+        <ol>
+          <li>These terms are between you and us only, and not with Apple. We, not Apple, are solely responsible for the game and its content.</li>
+          <li>Your licence is non-transferable and limited to using the game on any Apple-branded product that you own or control, as permitted by the Usage Rules in the Apple Media Services Terms and Conditions.</li>
+          <li>We, not Apple, are solely responsible for any maintenance and support. Apple has no obligation whatsoever to furnish any maintenance or support services.</li>
+          <li>To the maximum extent permitted by law, Apple has no warranty obligation in respect of the game. If the game fails to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price of the game to you, if any. Beyond that refund Apple has no other warranty obligation whatsoever, and any other claims, losses, liabilities, damages, costs or expenses attributable to a failure to conform to a warranty are our sole responsibility.</li>
+          <li>We, not Apple, are responsible for addressing any claim by you or a third party relating to the game or to your possession or use of it, including product liability claims, any claim that the game fails to conform to an applicable legal or regulatory requirement, and claims arising under consumer protection, privacy or similar legislation, including in connection with the game's use of the HealthKit and HomeKit frameworks.</li>
+          <li>If a third party claims that the game or your possession and use of it infringes that third party's intellectual property rights, we, not Apple, are solely responsible for the investigation, defence, settlement and discharge of that claim.</li>
+          <li>You represent and warrant that you are not located in a country that is subject to a U.S. Government embargo or that has been designated by the U.S. Government as a "terrorist supporting" country, and that you are not listed on any U.S. Government list of prohibited or restricted parties.</li>
+          <li>Questions, complaints or claims about the game should be directed to "5TH TABLE" MMC at the address given above, or to <a href="mailto:support@5thtable.com">support@5thtable.com</a>.</li>
+          <li>You must comply with any applicable third-party terms of agreement when using the game.</li>
+          <li>Apple and Apple's subsidiaries are third-party beneficiaries of these terms, and upon your acceptance of them Apple will have the right, and will be deemed to have accepted the right, to enforce these terms against you as a third-party beneficiary.</li>
+        </ol>
+
+        <p>Where you obtained the game from Google Play, these terms are likewise between you and us only, and not with Google. Google is not responsible for the game or its content, has no maintenance, support or warranty obligation in respect of it, and your use is also subject to the Google Play Terms of Service.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Changes to the Service</h2></div>
+        <p>The Service is a live product that keeps evolving. We may add, change, rebalance, suspend or remove features, content, virtual items and game rules at any time, and we may require you to install updates in order to keep playing.</p>
+
+        <p>We may also discontinue a game or an online service. If we do, we will give at least 30 days' notice in the game and on <a href="https://5thtable.com">https://5thtable.com</a>, and we will stop selling virtual items from the moment that notice is given.</p>
+
+        <p>We aim to keep the Service available, but we do not promise that it will be uninterrupted or error-free. Maintenance, updates, outages, and problems with your own device or network connection may interrupt play.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Disclaimers</h2></div>
+        <p>To the maximum extent permitted by applicable law, the Service is provided "as is" and "as available", and we disclaim all warranties, express or implied, including implied warranties of merchantability, fitness for a particular purpose and non-infringement, and any warranty that the Service will be uninterrupted, secure or error-free or that defects will be corrected.</p>
+
+        <p>Nothing in these terms excludes or limits any warranty or right you have as a consumer that cannot lawfully be excluded, including under Azerbaijani consumer legislation and, if you are in the EEA or the United Kingdom, under the Digital Content Directive and equivalent national law.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Limitation of liability</h2></div>
+        <p>To the maximum extent permitted by applicable law, we are not liable for indirect, incidental, special, consequential, exemplary or punitive damages, nor for loss of profit, revenue, goodwill, data, game progress or virtual items, arising out of or connected with the Service, whether in contract, in tort including negligence, or otherwise, and whether or not we were advised that such loss was possible.</p>
+
+        <p>Our total aggregate liability to you for all claims arising in any twelve-month period is limited to the greater of the amount you actually paid us for the Service in the twelve months before the event giving rise to the claim, or 50 (fifty) Azerbaijani manats.</p>
+
+        <p>These limits do not apply to, and nothing in these terms excludes, our liability for death or personal injury caused by our negligence, for fraud or fraudulent misrepresentation, for gross negligence or wilful misconduct, or for any other liability that cannot be excluded or limited under the law that applies to you. If you are a consumer, your mandatory statutory rights are unaffected.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Indemnity</h2></div>
+        <p>To the extent permitted by law, and except where you are acting as a consumer in a jurisdiction that does not permit it, you agree to indemnify us against reasonable losses, liabilities and costs, including reasonable legal fees, arising from your breach of these terms, your unlawful use of the Service, or your infringement of a third party's rights. We will notify you promptly of any such claim and will not settle it without consulting you.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Governing law and disputes</h2></div>
+        <p>These terms are governed by the law of the Republic of Azerbaijan, without regard to its conflict-of-law rules, and disputes are subject to the exclusive jurisdiction of the competent courts of the Republic of Azerbaijan.</p>
+
+        <p>If you are a consumer resident in another country, this does not deprive you of the protection of the mandatory provisions of your own law, and you may bring proceedings in the courts of your own country of residence. Consumers in the EEA and the United Kingdom may also use the European Commission's Online Dispute Resolution platform at ec.europa.eu/consumers/odr.</p>
+
+        <p>Before starting any formal proceedings, please write to <a href="mailto:support@5thtable.com">support@5thtable.com</a> and give us 30 days to resolve the matter. Most problems are settled this way.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>General</h2></div>
+        <p>These terms and the <a href="privacy.html">Privacy Policy</a> are the whole agreement between us about the Service. If any provision is held invalid or unenforceable, the rest remains in force and the invalid provision is replaced by a valid one that comes closest to its intent. If we do not enforce a provision, we do not thereby waive it. You may not assign these terms; we may assign them to an affiliate or to an acquirer of the business, provided your rights are not reduced. Neither party is liable for a failure caused by events beyond its reasonable control.</p>
+
+        <p>These terms are published in English and Azerbaijani. If the two texts differ, the Azerbaijani text prevails for users in the Republic of Azerbaijan and the English text prevails elsewhere.</p>
+      </section>
+      <section class="card">
+        <div class="strip"><h2>Changes to these terms</h2></div>
+        <p>We may update these terms. For material changes we will give notice in the game and on <a href="https://5thtable.com">https://5thtable.com</a> at least 14 days before they take effect, and we will update the date at the top of this page. Continuing to use the Service after a change takes effect means you accept the updated terms. If you do not accept them, stop using the Service and delete your account.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="head-shell">
+      <nav class="foot-nav">
+        <a href="/en-US/terms.html">Terms of Use</a>
+        <a href="/en-US/privacy.html">Privacy Policy</a>
+        <a href="mailto:support@5thtable.com">Contact</a>
+        <a href="/delete-account">Account Deletion</a>
+      </nav>
+      <div class="legal">
+        <p>&copy; 2026 5th Table. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
