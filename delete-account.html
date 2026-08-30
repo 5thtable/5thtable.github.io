@@ -328,11 +328,17 @@
       });
   }
 
+  var PLAYER_ID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+
   document.getElementById("request-form").addEventListener("submit", function (evt) {
     evt.preventDefault();
     setError("request-error", null);
     state.playerId = document.getElementById("player-id").value.replace(/\s+/g, "").toLowerCase();
     state.email = document.getElementById("contact-email").value.trim();
+    if (!PLAYER_ID_PATTERN.test(state.playerId)) {
+      setError("request-error", "player_id_invalid");
+      return;
+    }
     sendCode(function (errorKey) {
       if (errorKey) {
         setError("request-error", errorKey);
